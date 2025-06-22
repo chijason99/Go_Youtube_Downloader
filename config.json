@@ -1,0 +1,5 @@
+{
+    "path_to_yt_dlp_directory": "C:/Users/JASON/Downloads",
+    "audio_format": "mp3",
+    "default_output_template": "C:/Users/JASON/Videos/YouTube/%(title)s_%(id)s.%(ext)s"
+}
