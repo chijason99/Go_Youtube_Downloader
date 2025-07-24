@@ -25,7 +25,7 @@ type AccessTokenResponse struct {
 func LoadDropboxConfig() (*DropboxConfig, error) {
 	var dropboxConfig DropboxConfig
 
-	err := godotenv.Load()
+	err := godotenv.Load("PATH_TO_ENV_FILE/.env") // Replace with the actual path to your .env file
 
 	if err != nil {
 		return nil, fmt.Errorf("failed to load the .env file: %w", err)
@@ -76,7 +76,7 @@ func GetAccessToken(config *DropboxConfig) (string, error) {
 
 	if response.StatusCode != http.StatusOK {
 		bodyBytes, _ := io.ReadAll(response.Body)
-		
+
 		return "", fmt.Errorf("token request failed with status: %s, %s", response.Status, string(bodyBytes))
 	}
 
